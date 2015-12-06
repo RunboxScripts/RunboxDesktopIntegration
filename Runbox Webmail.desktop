@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Name=Runbox Webmail
+Comment=Compose new email in Runbox Webmail
+Type=Application
+Terminal=false
+StartupNotify=true
+Exec=runbox-mailto %U
+Icon=mail_generic
+MimeType=x-scheme-handler/mailto;application/mbox;message/rfc822;
+Categories=Email;
