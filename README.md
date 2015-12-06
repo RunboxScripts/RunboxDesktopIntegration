@@ -1,4 +1,4 @@
-# RunboxWebmail
+# Runbox Webmail
 
 Open mailto links in Linux using Runbox Webmail.
 
@@ -17,3 +17,15 @@ Clicking a mailto link anywhere in Linux forwards the link to `runbox-mailto.sh`
 4. Go to Default Applications and set "Runbox Webmail" as the default email application.
 
 5. Restart your web browser, and make sure "Runbox Webmail" is set as the default email application.
+
+## Support
+
+[Open an issue](https://github.com/RunboxScripts/RunboxWebmail/issues) or email: runboxscripts@runbox.com
+
+Feel free to:
+
+* Ask **any** questions
+* Report bugs and problems
+* Suggest new key shortcuts
+
+We look forward to hearing from you, thanks!
