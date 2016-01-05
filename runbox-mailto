@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 # Runbox mailto url handler
+# Description: Converts mailto links to the format required by Runbox Webmail
 # Usage: runbox-mailto [MAILTO_URL]
-
-# set -u
-set -o nounset
-# set -e
-set -o errexit
-set -o pipefail
 
 runbox_mailto() {
     local http_url mailto_url
@@ -45,3 +40,4 @@ runbox_mailto() {
     xdg-open $http_url$mailto_url &
 }
 runbox_mailto "$@"
+
