@@ -8,7 +8,7 @@ Clicking a mailto link anywhere in Linux forwards the link to the script `runbox
 
 ## Installation
 
-1. Put `runbox-mailto` in `~/bin`. This is the script that does the URL formatting.
+1. Put `runbox-mailto` wherever you put your executable scripts. (Perhaps in `~/bin` or `~/.local/bin` or some other location in your path). This is the script that does the URL formatting.
 
 2. Put `Runbox Webmail.desktop` in `~/.local/share/applications`. This adds a custom application to open mailto links.
 
