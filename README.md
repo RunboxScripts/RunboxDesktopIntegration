@@ -22,12 +22,10 @@ Clicking a mailto link anywhere in Linux forwards the link to the script `runbox
 
 ## Support
 
-[Open an issue](https://github.com/RunboxScripts/RunboxWebmail/issues) or email: runboxscripts@runbox.com
+[Open an issue](https://github.com/RunboxScripts/RunboxDesktopIntegration/issues) or email: runboxscripts@runbox.com
 
 Feel free to:
 
-* Ask **any** questions
 * Report bugs and problems
-* Suggest new key shortcuts
-
-We look forward to hearing from you, thanks!
+* Ask any questions
+* Make any suggestions
