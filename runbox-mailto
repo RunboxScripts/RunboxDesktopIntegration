@@ -1,43 +1,40 @@
 #!/usr/bin/env bash
-# Runbox mailto url handler
-# Description: Converts mailto links to the format required by Runbox Webmail
-# Usage: runbox-mailto [MAILTO_URL]
+# Runbox mailto URL handler
+# Description: Converts mailto links and email addresses to the format required by Runbox Webmail
+# Requires: sed, xdg-open, xclip (optional)
+# Usage: runbox-mailto <mailto URL or email address>
 
-runbox_mailto() {
-    local http_url mailto_url
-
-    # set runbox compose url
-    http_url="https://runbox.com/mail/compose"
-
+__runbox_mailto() {
+    # set runbox compose URL
+    local http_url="https://runbox.com/mail/compose"
     # check for args, if none open runbox
-    if [[ ! -n "$*" ]] ; then
+    if [[ ! -n "$*" ]]; then
         xdg-open $http_url &
         exit 0
     fi
-
-    # get the mailto url, prefix with ?
-    mailto_url="?$1"
-
-    # to= <- mailto:
-    mailto_url=$(sed "s/mailto:/to=/g" <<< "$mailto_url")
-
-    # &cc= <- ?cc=, &cc=
-    mailto_url=$(sed "s/?cc=\|&cc=/\&cc=/g" <<< "$mailto_url")
-
-    # &bcc= <- ?bcc=, &bcc=
-    mailto_url=$(sed "s/?bcc=\|&bcc=/\&bcc=/g" <<< "$mailto_url")
-
-    # &subject= <- ?subject=, &subject=
-    mailto_url=$(sed "s/?subject=\|&subject=/\&subject=/g" <<< "$mailto_url")
-
-    # \&msg_body= <- ?body=, &body=, &amp;body=
-    mailto_url=$(sed "s/?body=\|&body=\|&amp;body=/\&msg_body=/g" <<< "$mailto_url")
-
+    # set mailto URL
+    local mailto_url="$1"
+    # check if URL does not contain mailto
+    if [[ $mailto_url != *"mailto"* ]]; then
+        # treat as just an email address
+        mailto_url="?to=$mailto_url"
+    else
+        # prefix with ?
+        mailto_url="?$mailto_url"
+        # to= <- mailto:
+        mailto_url=$(sed "s/mailto:/to=/g" <<< "$mailto_url")
+        # &cc= <- ?cc=, &cc=
+        mailto_url=$(sed "s/?cc=\|&cc=/\&cc=/g" <<< "$mailto_url")
+        # &bcc= <- ?bcc=, &bcc=
+        mailto_url=$(sed "s/?bcc=\|&bcc=/\&bcc=/g" <<< "$mailto_url")
+        # &subject= <- ?subject=, &subject=
+        mailto_url=$(sed "s/?subject=\|&subject=/\&subject=/g" <<< "$mailto_url")
+        # \&msg_body= <- ?body=, &body=, &amp;body=
+        mailto_url=$(sed "s/?body=\|&body=\|&amp;body=/\&msg_body=/g" <<< "$mailto_url")
+    fi
     # send URL to system clipboard (optional)
     # xclip -se c <<< $http_url$mailto_url
-
     # open URL in browser
     xdg-open $http_url$mailto_url &
 }
-runbox_mailto "$@"
-
+__runbox_mailto "$@"
