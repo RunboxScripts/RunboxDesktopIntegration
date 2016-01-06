@@ -2,9 +2,9 @@
 # Runbox mailto URL handler
 # Description: Converts mailto links and email addresses to the format required by Runbox Webmail
 # Requires: sed, xdg-open, xclip (optional)
-# Usage: runbox-mailto <mailto URL or email address>
+# Usage: mailto-runbox <mailto URL or email address>
 
-__runbox_mailto() {
+__mailto_runbox() {
     # set runbox compose URL
     local http_url="https://runbox.com/mail/compose"
     # check for args, if none open runbox
@@ -37,4 +37,5 @@ __runbox_mailto() {
     # open URL in browser
     xdg-open $http_url$mailto_url &
 }
-__runbox_mailto "$@"
+__mailto_runbox "$@"
+
