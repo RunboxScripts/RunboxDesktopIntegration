@@ -8,7 +8,7 @@ __mailto_runbox() {
     # set runbox compose URL
     local http_url="https://runbox.com/mail/compose"
     # check for args, if none open runbox
-    if [[ ! -n "$*" ]]; then
+    if [[ -z "$1" ]]; then
         xdg-open $http_url &
         exit 0
     fi
