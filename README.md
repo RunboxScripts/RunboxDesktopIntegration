@@ -22,7 +22,7 @@ Clicking a mailto link anywhere in Linux forwards the link to the script `mailto
 
 ## Support
 
-[Open an issue](https://github.com/RunboxScripts/RunboxDesktopIntegration/issues) or email: runboxscripts@runbox.com
+[Open an issue](https://github.com/RunboxScripts/RunboxDesktopIntegration/issues)
 
 Feel free to:
 
