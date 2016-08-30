@@ -2,6 +2,8 @@
 
 Open mailto links in Linux desktop using Runbox Webmail.
 
+Note: I no longer use Runbox, and am looking for a new [organization](https://github.com/RunboxScripts) maintainer.
+
 ## How it works
 
 Clicking a mailto link anywhere in Linux forwards the link to the script `mailto-runbox` to format the URL correctly, and opens the formatted Runbox Webmail URL in the default web browser.
