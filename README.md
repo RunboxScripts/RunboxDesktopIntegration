@@ -1,8 +1,8 @@
 # Runbox Desktop Integration
 
-Open mailto links in Linux desktop using Runbox Webmail.
+**Note:** I no longer use Runbox, and am looking for a new [organization](https://github.com/RunboxScripts) maintainer for this project.
 
-Note: I no longer use Runbox, and am looking for a new [organization](https://github.com/RunboxScripts) maintainer.
+Open mailto links in Linux desktop using Runbox Webmail.
 
 ## How it works
 
